@@ -1,7 +1,7 @@
 import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 // material
 import {
   Card,
@@ -25,6 +25,7 @@ import Scrollbar from '../components/Scrollbar';
 import Iconify from '../components/Iconify';
 import SearchNotFound from '../components/SearchNotFound';
 import { UserListHead, UserListToolbar, UserMoreMenu } from '../sections/@dashboard/user';
+import CreateModal from '../sections/@dashboard/projects/CreateModal'
 // mock
 import USERLIST from '../_mock/user';
 
@@ -70,7 +71,8 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function User() {
+export default function Projects() {
+  const navigate = useNavigate()
   const [page, setPage] = useState(0);
 
   const [order, setOrder] = useState('asc');
@@ -137,11 +139,9 @@ export default function User() {
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            User
+            Projects
           </Typography>
-          <Button variant="contained" component={RouterLink} to="#" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New User
-          </Button>
+          <CreateModal />
         </Stack>
 
         <Card>
@@ -172,7 +172,7 @@ export default function User() {
                         role="checkbox"
                         selected={isItemSelected}
                         aria-checked={isItemSelected}
-                        onClick={() => alert(id)}
+                        onClick={() => navigate(`${id}`)}
                         sx={{cursor:"pointer"}}
                       >
                         <TableCell padding="checkbox">

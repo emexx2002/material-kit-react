@@ -12,35 +12,21 @@ const navConfig = [
     icon: getIcon('eva:pie-chart-2-fill'),
   },
   {
-    title: 'user',
-    path: '/dashboard/user',
-    icon: getIcon('eva:people-fill'),
+    title: 'Projects',
+    path: '/dashboard/projects',
+    icon: getIcon('octicon:project-24'),
   },
   {
-    title: 'product',
+    title: 'Tasks',
     path: '/dashboard/products',
-    icon: getIcon('eva:shopping-bag-fill'),
+    icon: getIcon('fluent:clipboard-task-list-rtl-24-regular'),
   },
   {
-    title: 'blog',
-    path: '/dashboard/blog',
-    icon: getIcon('eva:file-text-fill'),
-  },
-  {
-    title: 'login',
-    path: '/login',
-    icon: getIcon('eva:lock-fill'),
-  },
-  {
-    title: 'register',
-    path: '/register',
-    icon: getIcon('eva:person-add-fill'),
-  },
-  {
-    title: 'Not found',
-    path: '/404',
-    icon: getIcon('eva:alert-triangle-fill'),
-  },
+    title: 'Settings',
+    path: '/dashboard/products',
+    icon: getIcon('ci:settings-filled'),
+    
+  }
 ];
 
 export default navConfig;

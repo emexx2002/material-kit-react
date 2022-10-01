@@ -1,0 +1,1 @@
+export const TokenName = "Gh5tysgs-TKN-auth"

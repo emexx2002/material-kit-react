@@ -1,4 +1,6 @@
 // routes
+
+import  { Toaster } from 'react-hot-toast';
 import Router from './routes';
 // theme
 import ThemeProvider from './theme';
@@ -12,6 +14,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <ScrollToTop />
+      <Toaster position="top-right" />
       <BaseOptionChartStyle />
       <Router />
     </ThemeProvider>

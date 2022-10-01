@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast'
 // form
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -10,6 +11,8 @@ import { LoadingButton } from '@mui/lab';
 // components
 import Iconify from '../../../components/Iconify';
 import { FormProvider, RHFTextField, RHFCheckbox } from '../../../components/hook-form';
+import { loginUser } from '../../../services/auth';
+
 
 // ----------------------------------------------------------------------
 
@@ -39,9 +42,25 @@ export default function LoginForm() {
     formState: { isSubmitting },
   } = methods;
 
-  const onSubmit = async () => {
-    navigate('/dashboard', { replace: true });
-  };
+  const onSubmit = async (values) => {
+    loginUser(values).then((res) => {
+      console.log(res.data)
+      if (res.data.status === "success") {
+        // console.log(res.data.data)
+        toast.success("logged in successfully")
+
+        localStorage.setItem("Gh5tysgs-TKN-auth-user", JSON.stringify(res.data.data))
+        localStorage.setItem("Gh5tysgs-TKN-auth", res.data.data.accessToken)
+       
+        window.location.replace('/dashboard/app')
+      }
+    }).catch((err) => {
+      console.log(err)
+      toast.error("something went wrong")
+     
+    })
+  }
+
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>

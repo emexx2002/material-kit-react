@@ -9,7 +9,7 @@ import Page from '../components/Page';
 import Logo from '../components/Logo';
 // sections
 import { RegisterForm } from '../sections/auth/register';
-import AuthSocial from '../sections/auth/AuthSocial';
+// import AuthSocial from '../sections/auth/AuthSocial';
 
 // ----------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ export default function Register() {
     <Page title="Register">
       <RootStyle>
         <HeaderStyle>
-          <Logo />
+        <a href="#" style={{fontWeight:"bold", fontSize:"24px", textDecoration:"none", color:"#1d4ed8"}}><span style={{padding:"8px 14px", borderRadius:"50%", fontSize:"18px", color:"white", backgroundColor:"#1d4ed8", marginRight:"4px"}}>T</span>Tasky</a>
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
               Already have an account? {''}
@@ -79,9 +79,9 @@ export default function Register() {
         {mdUp && (
           <SectionStyle>
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Manage the job more effectively with Minimal
+              Manage your task more effectively with Tasky
             </Typography>
-            <img alt="register" src="/static/illustrations/illustration_register.png" />
+            <img alt="register" src="/static/illustrations/register.jpg" />
           </SectionStyle>
         )}
 
@@ -93,7 +93,7 @@ export default function Register() {
 
             <Typography sx={{ color: 'text.secondary', mb: 5 }}>Free forever. No credit card needed.</Typography>
 
-            <AuthSocial />
+            {/* <AuthSocial /> */}
 
             <RegisterForm />
 

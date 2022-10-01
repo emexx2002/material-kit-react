@@ -9,7 +9,7 @@ import Page from '../components/Page';
 import Logo from '../components/Logo';
 // sections
 import { LoginForm } from '../sections/auth/login';
-import AuthSocial from '../sections/auth/AuthSocial';
+// import AuthSocial from '../sections/auth/AuthSocial';
 
 // ----------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ export default function Login() {
     <Page title="Login">
       <RootStyle>
         <HeaderStyle>
-          <Logo />
+        <a href="#" style={{fontWeight:"bold", fontSize:"24px", textDecoration:"none", color:"#1d4ed8"}}><span style={{padding:"8px 14px", borderRadius:"50%", fontSize:"18px", color:"white", backgroundColor:"#1d4ed8", marginRight:"4px"}}>T</span>Tasky</a>
 
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
@@ -82,19 +82,19 @@ export default function Login() {
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
               Hi, Welcome Back
             </Typography>
-            <img src="/static/illustrations/illustration_login.png" alt="login" />
+            <img src="/static/illustrations/login.jpg" alt="login" />
           </SectionStyle>
         )}
 
         <Container maxWidth="sm">
           <ContentStyle>
             <Typography variant="h4" gutterBottom>
-              Sign in to Minimal
+              Sign in to Tasky
             </Typography>
 
             <Typography sx={{ color: 'text.secondary', mb: 5 }}>Enter your details below.</Typography>
 
-            <AuthSocial />
+            {/* <AuthSocial /> */}
 
             <LoginForm />
 
